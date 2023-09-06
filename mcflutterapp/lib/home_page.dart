@@ -43,31 +43,22 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.grey,
         )),
         child: const Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(
-              width: 80,
-            ),
             ListTile(
-              leading: Icon(
-                Icons.account_circle,
-                size: 50,
+              leading: Padding(
+                padding: EdgeInsets.only(left: 35),
+                child: Icon(
+                  Icons.account_circle,
+                  size: 50,
+                ),
               ),
-              title: Center(child: Text("Flutter McFLutter")),
-              subtitle: Center(
-                child: Text("Experienced App Developer"),
-              ),
+              title: Text("Flutter McFLutter"),
+              subtitle: Text("Experienced App Developer"),
             ),
             Row(
-              children: [
-                SizedBox(
-                  width: 10,
-                ),
-                Text("123 Main Street"),
-                SizedBox(
-                  width: 140,
-                ),
-                Text("(420) 555-0198")
-              ],
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text("123 Main Street"), Text("(420) 555-0198")],
             ),
             SizedBox(
               height: 20,
