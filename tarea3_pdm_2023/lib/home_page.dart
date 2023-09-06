@@ -10,8 +10,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Reserva tu hotel'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: BackButton(),
+        foregroundColor: Colors.white,
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -23,7 +27,15 @@ class HomePage extends StatelessWidget {
                 child: Container(
                   height: 150,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.green,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/appBar_img.jpg'),
+                      ),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      )),
                 ),
               ),
               // para poder poner column o listview en stack hay que encerrarlas en positioned y anclarla a todos lados
@@ -59,11 +71,20 @@ class HomePage extends StatelessWidget {
                         },
                       ),
                     ),
-                    MaterialButton(
-                      onPressed: () {},
-                      child: Text("Start booking"),
-                      color: Colors.red,
-                    ),
+                    Center(
+                      child: MaterialButton(
+                        onPressed: () {},
+                        child: Text("Start booking"),
+                        color: Colors.red,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        elevation: 10,
+                        textColor: Colors.white,
+                        padding: EdgeInsets.all(20),
+                        minWidth: 350,
+                      ),
+                    )
                   ],
                 ),
               ),

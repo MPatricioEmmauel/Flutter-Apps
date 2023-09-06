@@ -13,7 +13,12 @@ class ItemActividad extends StatelessWidget {
           Container(
             height: 120,
             width: 120,
-            color: Colors.purple,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/BList_bch3.jpg')),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
           ),
           Text("Day 1", style: TextStyle(fontSize: 11)),
           Text("Bali mountains"),
