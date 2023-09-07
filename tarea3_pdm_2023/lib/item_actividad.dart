@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:info_lugar/home_page.dart';
 
 class ItemActividad extends StatelessWidget {
-  ItemActividad({super.key});
+  ItemActividad(CardItem item, {super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build({required CardItem item}) {
     return Container(
       padding: EdgeInsets.all(8),
       child: Column(
@@ -16,7 +17,7 @@ class ItemActividad extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/BList_bch3.jpg')),
+                  image: AssetImage(imagePath)),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),
