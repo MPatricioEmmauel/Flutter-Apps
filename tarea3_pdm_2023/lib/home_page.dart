@@ -5,22 +5,43 @@ import 'package:info_lugar/item_actividad.dart';
 class CardItem {
   final String imagePath;
   final String place;
+  final String day;
 
   const CardItem({
     required this.imagePath,
     required this.place,
+    required this.day,
   });
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({
+  final ItemActividad itemA = new ItemActividad();
+
+  HomePage({
     Key? key,
   }) : super(key: key);
 
-  static const List <CardItem> items = [
-    CardItem(imagePath: 'assets/BList_bch1.jpg', place: "Banana Beach"),
-    CardItem(imagePath: 'assets/BList_bch2.jpg', place: "Joba Beach"),
-    CardItem(imagePath: 'assets/BList_bch3.jpg', place: "Kobe Beach"),
+  List<CardItem> items = [
+    CardItem(
+        imagePath: 'assets/BList_bch1.jpg',
+        place: "Banana Beach",
+        day: "Day 1"),
+    CardItem(
+        imagePath: 'assets/BList_bch2.jpg',
+        place: "Phuket Beach",
+        day: "Day 2"),
+    CardItem(
+        imagePath: 'assets/BList_bch3.jpg',
+        place: "Railay Beach",
+        day: "Day 3"),
+    CardItem(
+        imagePath: 'assets/BList_bch4.jpg',
+        place: "Ko Samui Beach",
+        day: "Day 4"),
+    CardItem(
+        imagePath: 'assets/BList_bch5.jpg',
+        place: "Ko Phi Phi Beach",
+        day: "Day 5"),
   ];
 
   @override
@@ -77,12 +98,12 @@ class HomePage extends StatelessWidget {
                     Container(
                       height: 200,
                       child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 5,
-                        itemBuilder: (BuildContext context, int index) {
-                          return ItemActividad(items[index]);
-                        },
-                      ),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: items.length,
+                          itemBuilder: (context, index) {
+                            final cardItem = items[index];
+                            return itemA.buildCard(item: cardItem);
+                          }),
                     ),
                     Center(
                       child: MaterialButton(

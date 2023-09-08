@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:info_lugar/home_page.dart';
 
-class ItemActividad extends StatelessWidget {
-  ItemActividad(CardItem item, {super.key});
-
-  @override
-  Widget build({required CardItem item}) {
+class ItemActividad {
+  Widget buildCard({required CardItem item}) {
     return Container(
       padding: EdgeInsets.all(8),
       child: Column(
@@ -16,13 +13,12 @@ class ItemActividad extends StatelessWidget {
             width: 120,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(imagePath)),
+                  fit: BoxFit.cover, image: AssetImage(item.imagePath)),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),
-          Text("Day 1", style: TextStyle(fontSize: 11)),
-          Text("Bali mountains"),
+          Text(item.day, style: TextStyle(fontSize: 11)),
+          Text(item.place),
         ],
       ),
     );

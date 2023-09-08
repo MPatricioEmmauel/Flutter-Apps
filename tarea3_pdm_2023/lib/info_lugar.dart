@@ -70,7 +70,7 @@ class InfoLugar extends StatelessWidget {
                 Column(
                   children: [
                     TextTitleTable("Hotel stay"),
-                    TextCellTable("5-star hotel")
+                    TextCellTable("4-star hotel")
                   ],
                 ),
               ],
