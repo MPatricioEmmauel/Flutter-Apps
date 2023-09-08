@@ -19,8 +19,8 @@ flutter:
     - assets/BList_bch1.jpg
     - assets/BList_bch2.jpg
     - assets/BList_bch3.jpg
-    #- assets/BList_bch4.jpg
-    #- assets/BList_bch5.jpg
+    - assets/BList_bch4.jpg
+    - assets/BList_bch5.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
